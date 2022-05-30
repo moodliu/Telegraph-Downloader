@@ -1,13 +1,3 @@
-'''
-Author       : Liu Xin-Yi
-Date         : 2022-04-15 09:10:36
-LastEditors  : Liu Xin-Yi
-LastEditTime : 2022-05-21 22:31:31
-FilePath     : Downloader
-Description  : 由rename.py(2022-04-15) 新增功能為 Downloader.py(2022-05-19~2022-05-20)
-
-Copyright (c) 2022 by Moodliu, All Rights Reserved.
-'''
 import re
 import os
 import argparse
