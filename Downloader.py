@@ -60,14 +60,16 @@ def rename_downloaded_file(no_duplicate_jpg_file, dir_path):
     # rename
     i = 0
     for item in no_duplicate_jpg_file:
-        file_name = re.findall(r"\w*.jpg|\w*.png", item)
-        if file_name[0][-4:] == '.jpg':
+        file_name = re.findall(r"\w*.jpg|\w*.png|\w*.jpeg", item)
+        if file_name[0].count('.jpg'):
             os.rename(dir_path+'/'+file_name[0], dir_path +
                       '/'+'{:03}'.format(i+1)+'.jpg')
-
-        elif file_name[0][-4:] == '.png':
+        elif file_name[0].count('.png'):
             os.rename(dir_path+'/'+file_name[0], dir_path +
                       '/'+'{:03}'.format(i+1)+'.png')
+        elif file_name[0].count('.jpeg'):
+            os.rename(dir_path+'/'+file_name[0], dir_path +
+                      '/'+'{:03}'.format(i+1)+'.jpeg')
         i = i+1
 
 
