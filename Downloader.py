@@ -75,14 +75,18 @@ def rename_downloaded_file(no_duplicate_jpg_file, dir_path):
 
 def argument():
     parser = argparse.ArgumentParser(description='Script so useful.')
-    parser.add_argument('--url')
-    args = parser.parse_args()
+    parser.add_argument('--url',type=str,default='')
+    return parser
+
+parser = argument()
+args = parser.parse_args()
+
+if(len(args.url) != 0):
     url_value = args.url
-    return url_value
+else:
+    # 使用者輸入Jable網址
+    url_value = input('輸入Telegra.ph網址:')
 
-
-url_value = argument()
-#url_value = ''
 response = request.urlopen(url_value)
 page_source = response.read().decode('utf-8')
 
